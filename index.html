@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pregnancy Week Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="card calculator-card" aria-labelledby="app-title">
+      <header class="card-header">
+        <h1 id="app-title">Pregnancy Week Calculator</h1>
+        <p class="subtitle">Calculate gestational age from the first day of the last menstrual period.</p>
+      </header>
+
+      <section class="input-section" aria-labelledby="lmp-heading">
+        <div class="section-heading-row">
+          <h2 id="lmp-heading">Last Menstrual Period</h2>
+        </div>
+
+        <div class="date-grid">
+          <div class="field-group">
+            <label for="dayInput">Day</label>
+            <div class="input-with-select">
+              <input id="dayInput" name="day" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="DD" aria-describedby="dateHelp">
+              <select id="daySelect" name="daySelect" aria-label="Select day">
+                <option value="">Day</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="monthInput">Month</label>
+            <div class="input-with-select">
+              <input id="monthInput" name="month" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="MM" aria-describedby="dateHelp">
+              <select id="monthSelect" name="monthSelect" aria-label="Select month">
+                <option value="">Month</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="yearInput">Year</label>
+            <div class="input-with-select year-combo">
+              <input id="yearInput" name="year" type="text" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="YYYY" aria-describedby="dateHelp">
+              <select id="yearSelect" name="yearSelect" aria-label="Select year">
+                <option value="">Year</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <p id="dateHelp" class="helper-text">Type the date manually or choose from the dropdowns.</p>
+      </section>
+
+      <div id="errorBox" class="message-box error-box hidden" role="alert" aria-live="polite"></div>
+
+      <div class="button-row">
+        <button id="calculateButton" type="button" class="action-button primary-button">Calculate</button>
+        <button id="resetButton" type="button" class="action-button secondary-button">Reset</button>
+      </div>
+
+      <section id="resultCard" class="result-card hidden" aria-live="polite">
+        <div class="result-header">
+          <div class="result-heading-wrap">
+            <span class="result-label">Pregnancy Age</span>
+          </div>
+          <div class="copy-area">
+            <button id="copyButton" type="button" class="copy-button" disabled>Copy</button>
+            <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+          </div>
+        </div>
+        <p id="resultText" class="result-text"></p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
